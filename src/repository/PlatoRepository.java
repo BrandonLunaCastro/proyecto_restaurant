@@ -15,8 +15,12 @@ public class PlatoRepository {
         return platos;
     }
 
-    public void delete(Plato plato) {
-        platos.remove(plato);
+    public void delete(int id) {
+        // elimina el plato cuando lo encuentra
+        boolean removed = platos.removeIf(pl -> pl.getId() == id);
+        if (! removed) {
+            System.out.println("Plato no encontrado por favor ingrese un id valido");
+        }
     }
 
 

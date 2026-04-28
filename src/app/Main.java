@@ -1,6 +1,8 @@
 import model.Plato;
 import repository.PlatoRepository;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
@@ -9,7 +11,6 @@ void main() {
     Scanner sc = new Scanner(System.in);
     PlatoRepository platoRepository = new PlatoRepository();
     int option;
-
 
     System.out.println("Bienvenido al Sistema");
     System.out.println("Seleccione una de las siguientes opciones");
@@ -46,9 +47,15 @@ void main() {
             platoRepository.add(plato);
         }
         //logica para eliminar un plato
-        if(option == 3) {break;}
+        if(option == 3) {
+            System.out.println("Ingrese el identificador del plato que quiera eliminar");
+            int id = sc.nextInt();
+            sc.nextLine();
+            platoRepository.delete(id);
+        }
 
         if(option == 0){
+            System.out.println("Finalizando la ejecucion del programa...");
             break;
         }
 
