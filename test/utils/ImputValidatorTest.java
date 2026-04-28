@@ -4,13 +4,12 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ImputValidatorTest {
-3
     @Test
     @DisplayName("readInt retorna el numero correcto cuando la entrada es valida")
     void testReadInt_entradaValida() {
         Scanner sc = new Scanner("5\n");
 
-        int resultado = InputValidator.readInt(sc, "");
+        int resultado = ImputValidator.readInt(sc, "");
 
         assertEquals(5, resultado);
     }
@@ -20,7 +19,7 @@ class ImputValidatorTest {
     void testReadDouble_entradaValida() {
         Scanner sc = new Scanner("10.50\n");
 
-        double resultado = InputValidator.readDouble(sc, "");
+        double resultado = ImputValidator.readDouble(sc, "");
 
         assertEquals(10.50, resultado);
     }
@@ -31,7 +30,7 @@ class ImputValidatorTest {
         // Simula que el usuario escribe "abc" primero, luego "3"
         Scanner sc = new Scanner("abc\n3\n");
 
-        int resultado = InputValidator.readInt(sc, "");
+        int resultado = ImputValidator.readInt(sc, "");
 
         assertEquals(3, resultado);
     }
@@ -41,7 +40,7 @@ class ImputValidatorTest {
     void testReadDouble_recuperaDespuesDeEntradaInvalida() {
         Scanner sc = new Scanner("precio\n9.99\n");
 
-        double resultado = InputValidator.readDouble(sc, "");
+        double resultado = ImputValidator.readDouble(sc, "");
 
         assertEquals(9.99, resultado);
     }
