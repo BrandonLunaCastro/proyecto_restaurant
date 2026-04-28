@@ -1,10 +1,8 @@
-import model.ImputValidator;
+import utils.ImputValidator;
 import model.Plato;
 import repository.PlatoRepository;
 
 import java.util.Scanner;
-
-import static model.ImputValidator.readInt;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
